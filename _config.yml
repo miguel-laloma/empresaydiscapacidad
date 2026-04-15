@@ -3,8 +3,8 @@ title: Empresa y Discapacidad
 description: >
   Un foro de diálogo para avanzar en el acercamiento entre el mundo de la discapacidad
   y el mundo empresarial, promoviendo integración laboral y responsabilidad social corporativa.
-baseurl: "" # Cambiar a /nombre-repo si no es el repositorio principal
-url: "https://empresa-discapacidad.org"
+baseurl: "/empresaydiscapacidad" # Ruta del repositorio en GitHub Pages
+url: "https://miguel-laloma.github.io" # URL base de GitHub Pages
 lang: es
 
 # Configuración Jekyll
