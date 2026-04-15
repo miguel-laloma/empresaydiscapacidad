@@ -1,0 +1,40 @@
+# Configuración de Jekyll para Empresa y Discapacidad
+title: Empresa y Discapacidad
+description: >
+  Un foro de diálogo para avanzar en el acercamiento entre el mundo de la discapacidad
+  y el mundo empresarial, promoviendo integración laboral y responsabilidad social corporativa.
+baseurl: "" # Cambiar a /nombre-repo si no es el repositorio principal
+url: "https://empresa-discapacidad.org"
+lang: es
+
+# Configuración Jekyll
+theme: minima
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Configuración de Feed
+feed:
+  posts_limit: 10
+
+# Configuración de SEO
+social:
+  name: Empresa y Discapacidad
+  links:
+    - https://www.aupa.es
+
+# Configuración de Sass
+sass:
+  sass_dir: assets/css
+  style: compressed

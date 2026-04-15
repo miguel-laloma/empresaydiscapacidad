@@ -1,0 +1,22 @@
+<!-- Barra de navegación -->
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-brand">
+      <a href="{{ '/' | relative_url }}" class="brand-link">
+        <strong>Empresa y Discapacidad</strong>
+      </a>
+    </div>
+    <ul class="navbar-menu">
+      <li><a href="{{ '/' | relative_url }}" class="nav-link">Inicio</a></li>
+      <li class="nav-item-dropdown">
+        <a href="#" class="nav-link">Nosotros</a>
+        <ul class="dropdown-menu">
+          <li><a href="{{ '/nosotros/aupa.html' | relative_url }}" class="dropdown-link">AUPA</a></li>
+          <li><a href="{{ '/nosotros/empresa-discapacidad.html' | relative_url }}" class="dropdown-link">Empresa y Discapacidad</a></li>
+        </ul>
+      </li>
+      <li><a href="{{ '/blog/' | relative_url }}" class="nav-link">Blog</a></li>
+      <li><a href="{{ '/publicaciones.html' | relative_url }}" class="nav-link">Publicaciones</a></li>
+    </ul>
+  </div>
+</nav>

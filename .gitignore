@@ -1,0 +1,23 @@
+# Archivo .gitignore para Jekyll
+
+# Directorios generados
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+*.gem
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Dependencias
+Gemfile.lock
+
+# Variables de entorno
+.env
+.env.local

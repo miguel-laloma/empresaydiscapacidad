@@ -1,0 +1,183 @@
+ESTRUCTURA COMPLETA DE ARCHIVOS - Empresa y Discapacidad
+=========================================================
+
+empresa-discapacidad/
+│
+├── 📋 ARCHIVOS DE CONFIGURACIÓN
+│   ├── _config.yml                 → Configuración principal de Jekyll
+│   ├── Gemfile                     → Dependencias Ruby/Jekyll
+│   ├── .gitignore                  → Archivos a ignorar en Git
+│   └── .github/workflows/jekyll.yml → Configuración GitHub Actions
+│
+├── 📖 ARCHIVOS DE DOCUMENTACIÓN
+│   ├── README.md                   → Guía completa (LEER PRIMERO)
+│   ├── QUICKSTART.md               → Inicio rápido (5 minutos)
+│   ├── DEPLOYMENT.md               → Instrucciones de despliegue
+│   ├── FILE_STRUCTURE.txt          → Este archivo
+│   └── setup.sh                    → Script de instalación
+│
+├── �� LAYOUTS (Plantillas HTML)
+│   └── _layouts/
+│       ├── default.html            → Plantilla base (navbar + footer + content)
+│       ├── page.html               → Para páginas estáticas
+│       └── post.html               → Para posts del blog
+│
+├── 🧩 COMPONENTES REUTILIZABLES
+│   └── _includes/
+│       ├── navbar.html             → Barra de navegación con dropdowns
+│       └── footer.html             → Pie de página con enlaces
+│
+├── 📄 PÁGINAS PRINCIPALES
+│   ├── index.md                    → Página de INICIO
+│   ├── publicaciones.md            → Página de PUBLICACIONES
+│   └── nosotros/
+│       ├── empresa-discapacidad.md → Página "Nosotros > Empresa y Discapacidad"
+│       └── aupa.md                 → Página "Nosotros > AUPA"
+│
+├── 📚 BLOG
+│   ├── blog/
+│   │   └── index.md                → Índice/listado del blog
+│   └── _posts/
+│       ├── 2026-04-10-integracion-laboral.md      → Post de ejemplo 1
+│       └── 2026-04-15-rse-discapacidad.md         → Post de ejemplo 2
+│
+├── 🎨 ASSETS (Recursos Estáticos)
+│   └── assets/css/
+│       └── style.css               → CSS minimalista, accesible, responsive
+
+
+EXPLICACIÓN DE CARPETAS ESPECIALES
+===================================
+
+_layouts/
+  └─ Archivos HTML que envuelven el contenido Markdown
+     - default.html: estructura base (html, head, body con navbar+footer)
+     - page.html: extiende default para páginas simples
+     - post.html: extiende default para artículos con meta información
+
+_includes/
+  └─ Fragmentos HTML reutilizables incluidos en layouts
+     - navbar.html: menú de navegación
+     - footer.html: pie de página
+
+_posts/
+  └─ Artículos del blog (procesados automáticamente)
+     Formato: YYYY-MM-DD-titulo-del-post.md
+     Se ordena por fecha descendente
+
+assets/
+  └─ Archivos estáticos (CSS, JS, imágenes)
+     Se copian tal cual al sitio generado
+
+
+CONTENIDO DEL ARCHIVO CSS
+==========================
+
+assets/css/style.css contiene:
+  • Variables CSS para colores, tipografía, espaciado
+  • Estilos base (html, body, tipografía)
+  • Navegación responsiva con dropdowns
+  • Diseño hero para inicio
+  • Estilos blog (tarjetas, metadatos)
+  • Footer multcolumna
+  • Responsive media queries (tablet, móvil)
+  • Accesibilidad: focus-visible, prefers-reduced-motion
+  • Soporte para modo oscuro (prefers-color-scheme: dark)
+
+
+CONTENIDO DE FRONT MATTER MARKDOWN
+===================================
+
+Cada archivo .md contiene front matter YAML entre ---:
+
+Ejemplo para página:
+---
+layout: page
+title: "Título de la Página"
+permalink: /ruta/pagina.html
+description: "Meta descripción"
+---
+
+Ejemplo para post:
+---
+layout: post
+title: "Título del Artículo"
+date: 2026-04-15
+author: "Nombre Autor"
+excerpt: "Resumen breve para listados"
+categories: Categoria1 Categoria2
+---
+
+
+CÓMO SE PROCESA TODO
+====================
+
+1. GitHub detecta cambios en main branch
+2. Ejecuta Jekyll automáticamente:
+   • Lee _config.yml
+   • Procesa archivos .md con layouts
+   • Transforma includes y variables
+   • Genera sitio estático HTML/CSS
+3. Publica en https://tu-usuario.github.io/empresa-discapacidad/
+4. Disponible en ~1-5 minutos
+
+
+PERSONALIZACIONES COMUNES
+==========================
+
+Cambiar colores:
+  → Editar :root en assets/css/style.css
+
+Cambiar título/descripción:
+  → Editar _config.yml
+
+Editar navegación:
+  → Editar _includes/navbar.html
+
+Cambiar footer:
+  → Editar _includes/footer.html
+
+Añadir nueva página:
+  → Crear archivo .md en raíz o carpeta
+  → Usar layout: page en front matter
+  → Agregar enlace en navbar.html
+
+Añadir post:
+  → Crear _posts/YYYY-MM-DD-titulo.md
+  → Usar layout: post
+  → Se mostrará automáticamente en /blog/
+
+
+TAMAÑOS DE ARCHIVOS
+===================
+
+_config.yml              ~1 KB
+Gemfile                  ~1 KB
+README.md                ~8 KB
+DEPLOYMENT.md            ~6 KB
+assets/css/style.css     ~15 KB
+index.md                 ~3 KB
+Posts (2)                ~10 KB
+Páginas nosotros (2)     ~6 KB
+Layouts (3)              ~3 KB
+Includes (2)             ~2 KB
+─────────────────────────────
+TOTAL (sin cache)        ~55 KB
+TOTAL (comprimido)       ~20 KB
+
+
+NOTAS IMPORTANTES
+=================
+
+✓ GitHub Pages compila Jekyll automáticamente
+✓ No necesitas ejecutar Jekyll localmente para desplegar
+✓ Cambios se actualizan automáticamente tras hacer push
+✓ No requiere base de datos, todo es estático
+✓ Compatible con navegadores antiguos
+✓ Accesible según WCAG 2.1 AA
+✓ Completamente responsive (móvil, tablet, desktop)
+✓ Carga rápida (sitio estático)
+
+
+ARCHIVO ORIGINAL: 15 de abril de 2026
+======================================
