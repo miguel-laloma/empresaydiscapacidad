@@ -1,7 +1,7 @@
 # Archivo .gitignore para Jekyll
 
 # Directorios generados
-_site/
+# _site/ - Se incluye para que GitHub Pages lo sirva
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
