@@ -117,7 +117,7 @@ a {
 }
 
 a:visited {
-  color: var(--color-link-visited);
+  color: var(--color-link);
 }
 
 a:hover, a:focus {
@@ -259,9 +259,12 @@ pre code {
   margin-top: 0.5rem;
   min-width: 200px;
   overflow: hidden;
+  z-index: 1000;
+  padding: 0.5rem 0;
 }
 
 .nav-item-dropdown:hover .dropdown-menu,
+.nav-item-dropdown:focus-within .dropdown-menu,
 .nav-item-dropdown.active .dropdown-menu {
   display: block;
 }
@@ -358,8 +361,16 @@ pre code {
   font-size: var(--font-size-base);
 }
 
+.btn:visited {
+  color: inherit;
+}
+
 .btn-primary {
   background-color: var(--color-accent);
+  color: white;
+}
+
+.btn-primary:visited {
   color: white;
 }
 
@@ -373,6 +384,10 @@ pre code {
   background-color: white;
   color: var(--color-primary);
   border: 2px solid white;
+}
+
+.btn-secondary:visited {
+  color: var(--color-primary);
 }
 
 .btn-secondary:hover, .btn-secondary:focus {
