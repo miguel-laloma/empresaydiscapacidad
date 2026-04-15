@@ -52,8 +52,18 @@
 
   
   <main class="main-content">
-    <div class="container admin-panel">
-  <h1>📝 Panel de Admin - Crear Artículos</h1>
+    <script>
+  // Verificar autenticación
+  if (!sessionStorage.getItem('adminAuthenticated')) {
+    window.location.href = "/empresaydiscapacidad/admin-login/";
+  }
+</script>
+
+<div class="container admin-panel">
+  <div class="admin-header">
+    <h1>📝 Panel de Admin - Crear Artículos</h1>
+    <button onclick="logout()" class="btn btn-secondary" style="margin-left: auto;">🚪 Cerrar Sesión</button>
+  </div>
   
   <div class="admin-editor">
     <form id="articleForm" class="admin-form">
@@ -151,6 +161,17 @@
   .admin-panel {
     max-width: 1000px;
     margin: 2rem auto;
+  }
+
+  .admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  .admin-header h1 {
+    margin: 0;
   }
 
   .admin-form {
@@ -423,6 +444,14 @@ ${content}`;
     element.click();
     document.body.removeChild(element);
   }
+
+  // Cerrar sesión
+  function logout() {
+    if (confirm('¿Estás seguro de que quieres cerrar sesión?')) {
+      sessionStorage.removeItem('adminAuthenticated');
+      window.location.href = "/empresaydiscapacidad/admin-login/";
+    }
+  }
 </script>
 
 
@@ -443,7 +472,7 @@ ${content}`;
         <li><a href="/empresaydiscapacidad/nosotros/aupa.html">Sobre nosotros</a></li>
         <li><a href="/empresaydiscapacidad/blog/">Blog</a></li>
         <li><a href="/empresaydiscapacidad/publicaciones.html">Publicaciones</a></li>
-        <li><a href="/empresaydiscapacidad/admin/" style="color: var(--color-accent); font-weight: 600;">🔐 Panel Admin</a></li>
+        <li><a href="/empresaydiscapacidad/admin-login/" style="color: var(--color-accent); font-weight: 600;">🔐 Panel Admin</a></li>
       </ul>
     </div>
     <div class="footer-info">

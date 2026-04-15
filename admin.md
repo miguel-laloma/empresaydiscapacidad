@@ -4,8 +4,18 @@ title: Panel de Admin - Crear Artículos
 permalink: /admin/
 ---
 
+<script>
+  // Verificar autenticación
+  if (!sessionStorage.getItem('adminAuthenticated')) {
+    window.location.href = "{{ '/admin-login/' | relative_url }}";
+  }
+</script>
+
 <div class="container admin-panel">
-  <h1>📝 Panel de Admin - Crear Artículos</h1>
+  <div class="admin-header">
+    <h1>📝 Panel de Admin - Crear Artículos</h1>
+    <button onclick="logout()" class="btn btn-secondary" style="margin-left: auto;">🚪 Cerrar Sesión</button>
+  </div>
   
   <div class="admin-editor">
     <form id="articleForm" class="admin-form">
@@ -131,6 +141,17 @@ permalink: /admin/
   .admin-panel {
     max-width: 1000px;
     margin: 2rem auto;
+  }
+
+  .admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  .admin-header h1 {
+    margin: 0;
   }
 
   .admin-form {
@@ -402,5 +423,13 @@ ${content}`;
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
+  }
+
+  // Cerrar sesión
+  function logout() {
+    if (confirm('¿Estás seguro de que quieres cerrar sesión?')) {
+      sessionStorage.removeItem('adminAuthenticated');
+      window.location.href = "{{ '/admin-login/' | relative_url }}";
+    }
   }
 </script>
